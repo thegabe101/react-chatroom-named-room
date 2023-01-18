@@ -1,18 +1,21 @@
-import React from 'react'
-import { auth } from '../config/firebase';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { signOut } from 'firebase/auth';
-import { useNavigate } from 'react-router-dom';
+import Cookies from 'universal-cookie';
+import { useState } from 'react';
+import SignOut from '../pages/Signout';
 
-export const Logout = () => {
-    const navigate = useNavigate();
+const cookies = new Cookies();
 
-    const signUserOut = async () => {
-        await signOut(auth);
-        navigate('/');
-    }
+function Logout() {
+    const [loggedIn, setLoggedIn] = useState(cookies.get("auth-token"));
+    const handleClick = e => {
+        setLoggedIn(cookies.remove('auth-token'));
+    };
 
     return (
-        <div><button onClick={signUserOut}>Sign Out</button></div>
-    )
+        <div>
+            {loggedIn && (
+                <SignOut handleClick={handleClick} />
+            )}
+        </div>
+    );
 }
+export default Logout;

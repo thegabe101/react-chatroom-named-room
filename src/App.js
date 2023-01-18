@@ -4,6 +4,7 @@ import Cookies from 'universal-cookie';
 import { useState } from 'react';
 import { createContext, useContext } from 'react';
 import { Room } from './pages/Room';
+import Logout from './components/logout';
 
 const RoomContext = createContext(null);
 
@@ -26,6 +27,7 @@ function App(props) {
 
     <div className="App">
       <Room />
+      <Logout />
     </div>
 
   );
