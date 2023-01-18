@@ -37,13 +37,14 @@
 .user {
     font-weight: bold;
     margin-right: 10px;
-    color: #333;
+    color: rgb(240, 236, 236);
 }
 
 .newMessageForm {
     display: flex;
     width: 100%;
     padding: 10px;
+    border: solid #3b5998 1px;
 }
 
 .newMessage {
@@ -52,7 +53,7 @@
     outline: none;
     background: transparent;
     font-size: 16px;
-    color: #333;
+    color: rgb(255, 255, 255);
     padding: 10px;
     border-radius: 5px 0 0 5px;
 }
@@ -64,4 +65,6 @@
     color: #fff;
     font-size: 16px;
     font-weight: bold;
+    margin-right: 15px;
+    cursor: pointer;
 }
