@@ -1,0 +1,10 @@
+.auth {
+    cursor: pointer;
+}
+
+.google {
+    height: 25px;
+    display: inline;
+    border-radius: 100px;
+    margin-right: 10px;
+}
